@@ -363,7 +363,7 @@ class post extends exporter {
         $canedit = $capabilitymanager->can_edit_post($user, $discussion, $post);
         $candelete = $capabilitymanager->can_delete_post($user, $discussion, $post);
         $cansplit = $capabilitymanager->can_split_post($user, $discussion, $post);
-        $canreply = $capabilitymanager->can_reply_to_post($user, $discussion, $post);
+        $canreply = $capabilitymanager->can_reply_to_post($user, $discussion, $post) && $canview;
         $canexport = $capabilitymanager->can_export_post($user, $post);
         $cancontrolreadstatus = $capabilitymanager->can_manually_control_post_read_status($user);
         $canselfenrol = $capabilitymanager->can_self_enrol($user);
